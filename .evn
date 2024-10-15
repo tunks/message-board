@@ -1,0 +1,4 @@
+export DATABASE_HOST=127.0.01
+export DATABASE_USER=root
+export DATABASE_PASSWORD=userdb@2024
+export DATABASE_NAME=message_board_db
