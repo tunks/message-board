@@ -1,0 +1,17 @@
+{
+  "scripts": {
+    "type": "module",
+    "build": "yarn build:css && yarn build:js",
+    "build:css": "yarn build:css:application",
+    "build:css:application": "tailwindcss -i app/assets/stylesheets/application.tailwind.css -o app/assets/builds/application.css -c config/tailwind.config.js",
+    "build:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --loader:.png=binary --loader:.svg=binary",
+    "failure:js": "rm ./app/assets/builds/application.js && rm ./app/assets/builds/application.js.map",
+    "dev": "tsc-watch --noClear -p tsconfig.json --onSuccess \"yarn build:js\" --onFailure \"yarn failure:js\""
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.1.10",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "yarn": "^1.22.22"
+  }
+}

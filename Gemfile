@@ -68,3 +68,7 @@ group :test do
 end
 
 gem "tailwindcss-rails", "~> 2.7"
+
+gem "react_on_rails", "~> 14.0"
+
+gem "package_json", "~> 0.1.0"
