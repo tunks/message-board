@@ -1,7 +1,7 @@
 {
   "scripts": {
     "type": "module",
-    "build": "yarn build:css && yarn build:js",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets  --loader:.js=jsx",
     "build:css": "yarn build:css:application",
     "build:css:application": "tailwindcss -i app/assets/stylesheets/application.tailwind.css -o app/assets/builds/application.css -c config/tailwind.config.js",
     "build:js": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --loader:.png=binary --loader:.svg=binary",
@@ -9,9 +9,27 @@
     "dev": "tsc-watch --noClear -p tsconfig.json --onSuccess \"yarn build:js\" --onFailure \"yarn failure:js\""
   },
   "dependencies": {
+    "@babel/preset-react": "^7.25.7",
     "@headlessui/react": "^2.1.10",
+    "@heroicons/react": "^2.1.5",
+    "@hotwired/turbo-rails": "^8.0.12",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "mini-css-extract-plugin": "^2.9.1",
+    "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "style-loader": "^4.0.0",
+    "tailwindcss": "^3.4.14",
     "yarn": "^1.22.22"
+  },
+  "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
+    "esbuild": "^0.24.0",
+    "react-refresh": "^0.14.2",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   }
 }

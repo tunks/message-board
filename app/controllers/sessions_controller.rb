@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     render :new, status: :unprocessable_entity
   end
 
-  def destory
+  def destroy
       logout
       redirect_to root_path
   end

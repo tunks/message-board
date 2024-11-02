@@ -1,9 +1,45 @@
 
-<div class="bg-white py-24 sm:py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto max-w-2xl lg:max-w-4xl">
-      <h1 class="font-bold text-4xl">Posts#new</h1>
-      <%= render partial: "posts/partials/post_form"%>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 py-2">
+  <div class=" max-w-lg divide-y-1 divide-gray-200 lg:max-w-7xl">
+
+
+
+    <!-- Wrapper for the form and sidebar -->
+    <div class="flex justify-center">
+      <!-- Form section -->
+      <div class="lg:w-3/5 p-6">
+         <div class="bg-white dark:bg-slate-900  px-6 py-8 ring-1 ring-slate-900/5 ">
+          <div>
+            <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+              </svg>
+            </span>
+          </div>
+          <h3 class="text-slate-900 dark:text-white mt-5 text-xl font-bold	 tracking-tight">Write a new article</h3>
+          <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm mb-4">
+          Have a breakthrough idea or insight about the latest technology? 
+          </p>
+          <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm mb-4">
+           Share your knowledge on advancements like AI, quantum computing, or space exploration. Inspire others with your tech expertise!
+          </p>
+          <%= render partial: "posts/partials/post_form"%>
+        </div>
+
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="hidden lg:block w-2/5 ml-6 mt-6">
+          <h2 class="text-xl font-bold mb-4 text-indigo-500">Latest Articles</h2>
+          <!-- Article list -->
+          <div class="space-y-4">
+           <%= render partial: "posts/partials/side_article_item" %>
+           <%= render partial: "posts/partials/side_article_item" %>
+           <%= render partial: "posts/partials/side_article_item" %>
+          </div>
+      </div>
     </div>
   </div>
-</div>
+
+
+

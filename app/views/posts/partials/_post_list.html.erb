@@ -4,10 +4,9 @@
       <p class="mt-2 text-lg leading-8 text-gray-600">Learn how to grow your business with our expert advice.</p>
        <%= render partial: "posts/partials/post_hero_menu" %>
       <div class="mt-16 space-y-20 lg:mt-20 lg:space-y-20">
-         <%=render partial: "posts/partials/post_article"%>
-         <%=render partial: "posts/partials/post_article"%>
-         <%=render partial: "posts/partials/post_article"%>
-
+        <%@posts.each do |post| %>
+            <%=render partial: "posts/partials/post_article", locals: { post: post} %>
+         <% end%>
         <!-- More posts... -->
       </div>
     </div>
